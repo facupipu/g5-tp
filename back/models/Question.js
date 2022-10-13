@@ -3,12 +3,12 @@ import mongoose from 'mongoose';
 const Schema = mongoose.Schema;
 
 const AnswerSchema = new Schema({
-  text: String,
+  answer: String,
   correct: Boolean
 }, { _id: false });
 
 const QuestionSchema = new Schema({
-  text: String,
+  question: String,
   subject: String,
   answers: [AnswerSchema]
 });

@@ -21,8 +21,8 @@ const getQuestionById = (req, res) => {
 
 const createQuestion = (req, res) => {
   const { question, subject, answers } = req.body;
-  const question = new Question({ question, subject, answers });
-  question.save((err, question) => {
+  const newQuestion = new Question({ question, subject, answers });
+  newQuestion.save((err, question) => {
     res.status(201).json(question);
   });
 };
@@ -30,11 +30,11 @@ const createQuestion = (req, res) => {
 const updateQuestion = (req, res) => {
   const id = req.params.id;
   const { question, subject, answers } = req.body;
-  const question = { question, subject, answers };
+  const newQuestion = { question, subject, answers };
   const options = {
     new: true
   };
-  Question.findByIdAndUpdate(id,question,options, (err, question) => {
+  Question.findByIdAndUpdate(id,newQuestion,options, (err, question) => {
     res.status(200).json(question);
   });
 };

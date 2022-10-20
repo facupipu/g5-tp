@@ -1,23 +1,24 @@
-import doge from './img/doge.jpg';
+
+import { useState } from 'react';
+import Main from './Main.js'
+import NewQuestion from './NewQuestion.js'
 import './App.css';
 
-function App() {
+
+
+const App = () =>  {
+
+  const [isHidden, setIsHidden] = useState(true);
+
+  const play = () => {
+    console.log('hola');
+    setIsHidden(prev => !prev);
+  };
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={doge} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Main isHidden={isHidden} play={play} />
+      <NewQuestion isHidden={isHidden}/>
     </div>
   );
 }

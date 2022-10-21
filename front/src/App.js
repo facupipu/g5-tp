@@ -10,14 +10,13 @@ const App = () =>  {
 
   const [isHidden, setIsHidden] = useState(true);
 
-  const play = () => {
-    console.log('hola');
+  const addQuestion = () => {
     setIsHidden(prev => !prev);
   };
 
   return (
     <div className="App">
-      <Main isHidden={isHidden} play={play} />
+      <Main addQuestion={addQuestion} />
       <NewQuestion isHidden={isHidden}/>
     </div>
   );

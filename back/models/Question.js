@@ -8,7 +8,7 @@ const AnswerSchema = new Schema({
 }, { _id: false });
 
 const QuestionSchema = new Schema({
-  question: String,
+  title: String,
   subject: String,
   answers: [AnswerSchema]
 });

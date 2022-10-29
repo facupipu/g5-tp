@@ -8,16 +8,25 @@ import './App.css';
 
 const App = () =>  {
 
-  const [isHidden, setIsHidden] = useState(true);
+  const [hiddenAddQuestion, setHiddenAddQuestion] = useState(true);
+  const [hiddenMenu, setHiddenMenu] = useState(false);
 
   const addQuestion = () => {
-    setIsHidden(prev => !prev);
+    setHiddenAddQuestion(prev => !prev);
   };
+  const hideMenu = () => {
+    setHiddenMenu(prev => !prev);
+  };
+
+  const changeMenues = () => {
+    addQuestion();
+    hideMenu();
+  }
 
   return (
     <div className="App">
-      <Main addQuestion={addQuestion} />
-      <NewQuestion isHidden={isHidden}/>
+      <Main changeMenues={changeMenues} hiddenMenu={hiddenMenu}/>
+      <NewQuestion changeMenues={changeMenues} hiddenAddQuestion={hiddenAddQuestion}/>
     </div>
   );
 }

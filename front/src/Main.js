@@ -1,14 +1,13 @@
-
 const Main = props => {
 
-  const {addQuestion} = props;
+  const {hiddenMenu, changeMenues} = props;
 
 
   return (
-    <div>
+    <div hidden={hiddenMenu}>
       <h1>Preguntados La35</h1>
       <button type="button">Jugar</button>
-      <button type="button" onClick={addQuestion}>Agreagar Pregunta</button>
+      <button type="button" onClick={changeMenues}>Agreagar Pregunta</button>
     </div>
   )
 };

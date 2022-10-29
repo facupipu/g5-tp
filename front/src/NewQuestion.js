@@ -1,11 +1,10 @@
 import { useState } from 'react';
 import axios from 'axios';
+import './styles.css'
 
 const NewQuestion = props => {
 
-  const {isHidden} = props;
-
-//   const question = { quest, subject, ans1, ans2, ans3, ans4 };
+  const {changeMenues, hiddenAddQuestion} = props;
 
   const [data, setData] = useState({
     title:'',
@@ -25,36 +24,39 @@ const NewQuestion = props => {
   }
 
   const handleSubmit = e => {
-  e.preventDefault();
-  data.answers = [
-    { answer: data.answer1, correct: false },
-    { answer: data.answer2, correct: false },
-    { answer: data.answer3, correct: false },
-    { answer: data.answer4, correct: false }
-  ];
-  const reqData = data;
-  delete reqData.answer1;
-  delete reqData.answer2;
-  delete reqData.answer3;
-  delete reqData.answer4;
-  delete reqData.correctAnswer;
-  console.log(reqData);
+    e.preventDefault();
+    data.answers = [
+      { answer: data.answer1, correct: false },
+      { answer: data.answer2, correct: false },
+      { answer: data.answer3, correct: false },
+      { answer: data.answer4, correct: false }
+    ];
+    const reqData = data;
+    delete reqData.answer1;
+    delete reqData.answer2;
+    delete reqData.answer3;
+    delete reqData.answer4;
+    delete reqData.correctAnswer;
+    console.log(reqData);
 
-  axios.post('/api/questions', data)
-     .then(res => {
-       console.log(res.data);
-  });
-  setData({
-    title:'',
-    subject:'',
-    answer1:'',
-    answer2:'',
-    answer3:'',
-    answer4:'',
-    answers:[],
-    correctAnswer: 1
-  })
-};
+    axios.post('/api/questions', data)
+       .then(res => {
+         console.log(res.data);
+    });
+
+    setData({
+      title:'',
+      subject:'',
+      answer1:'',
+      answer2:'',
+      answer3:'',
+      answer4:'',
+      answers:[],
+      correctAnswer: 1
+    })
+    alert('Pregunta enviada correctamente');
+    changeMenues();
+  };
 
   const handleRadios = e => {
     console.log(+e.target.previousSibling.name[6]);
@@ -63,7 +65,10 @@ const NewQuestion = props => {
   };
 
   return (
-    <div hidden={isHidden}>
+    <div hidden={(hiddenAddQuestion)}>
+      <div>
+       <button type="button" className="bg-red" onClick={changeMenues}/>
+      </div>
       <h1>Agregar Pregunta</h1>
       <form onSubmit= {handleSubmit}>
         <div>

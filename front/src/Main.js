@@ -6,8 +6,8 @@ const Main = props => {
   return (
     <div hidden={hiddenMenu}>
       <h1>Preguntados La35</h1>
-      <button type="button">Jugar</button>
-      <button type="button" onClick={changeMenues}>Agreagar Pregunta</button>
+      <button type="button" onClick={e => changeMenues('play')}>Jugar</button>
+      <button type="button" onClick={e => changeMenues('newQuestion')}>Agreagar Pregunta</button>
     </div>
   )
 };

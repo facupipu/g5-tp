@@ -1,6 +1,7 @@
 
 import { useState } from 'react';
 import Main from './Main.js'
+import Play from './Play.js'
 import NewQuestion from './NewQuestion.js'
 import './App.css';
 
@@ -8,25 +9,31 @@ import './App.css';
 
 const App = () =>  {
 
-  const [hiddenAddQuestion, setHiddenAddQuestion] = useState(true);
+  const [hiddenNewQuestion, setHiddenNewQuestion] = useState(true);
+  const [hiddenPlay, setHiddenPlay] = useState(true);
   const [hiddenMenu, setHiddenMenu] = useState(false);
 
-  const addQuestion = () => {
-    setHiddenAddQuestion(prev => !prev);
+  const play = () => {
+    setHiddenPlay(prev => !prev);
+  };
+  const newQuestion = () => {
+    setHiddenNewQuestion(prev => !prev);
   };
   const hideMenu = () => {
     setHiddenMenu(prev => !prev);
   };
 
-  const changeMenues = () => {
-    addQuestion();
+  const changeMenues = comp => {
     hideMenu();
+    if      (comp == 'play')        play();
+    else if (comp == 'newQuestion') newQuestion();
   }
 
   return (
     <div className="App">
       <Main changeMenues={changeMenues} hiddenMenu={hiddenMenu}/>
-      <NewQuestion changeMenues={changeMenues} hiddenAddQuestion={hiddenAddQuestion}/>
+      <Play changeMenues={changeMenues} hiddenPlay={hiddenPlay}/>
+      <NewQuestion changeMenues={changeMenues} hiddenAddQuestion={hiddenNewQuestion}/>
     </div>
   );
 }

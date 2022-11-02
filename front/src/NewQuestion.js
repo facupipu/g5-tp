@@ -14,7 +14,7 @@ const NewQuestion = props => {
     answer3:'',
     answer4:'',
     answers:[],
-    correctAnswer: 1
+    correctAnswer: 0
   });
 
   const handleChange = e => {
@@ -31,18 +31,12 @@ const NewQuestion = props => {
       { answer: data.answer3, correct: false },
       { answer: data.answer4, correct: false }
     ];
-    const reqData = data;
-    delete reqData.answer1;
-    delete reqData.answer2;
-    delete reqData.answer3;
-    delete reqData.answer4;
-    delete reqData.correctAnswer;
-    console.log(reqData);
+    data.answers[data.correctAnswer].correct = true;
 
-    axios.post('/api/questions', data)
-       .then(res => {
-         console.log(res.data);
-    });
+    // axios.post('/api/questions', data)
+    //    .then(res => {
+    //      console.log(res.data);
+    // });
 
     setData({
       title:'',
@@ -55,7 +49,7 @@ const NewQuestion = props => {
       correctAnswer: 1
     })
     alert('Pregunta enviada correctamente');
-    changeMenues();
+    changeMenues('newQuestion');
   };
 
   const handleRadios = e => {
@@ -67,7 +61,7 @@ const NewQuestion = props => {
   return (
     <div hidden={(hiddenAddQuestion)}>
       <div>
-       <button type="button" className="bg-red" onClick={changeMenues}/>
+       <button type="button" className="bg-red" onClick={e => changeMenues('newQuestion')} />
       </div>
       <h1>Agregar Pregunta</h1>
       <form onSubmit= {handleSubmit}>
@@ -90,7 +84,7 @@ const NewQuestion = props => {
         </div>
         <div>
           <input required type="text" placeholder="2° Respuesta" name ="answer2" value={data.answer2} onChange = {handleChange} />
-          <input name="trueAnswser" type="radio" id ="true2" value="2" onChange={handleRadios}/>
+          <input name="trueAnswer" type="radio" id ="true2" value="2" onChange={handleRadios}/>
         </div>
         <div>
           <input required type="text" placeholder="3° Respuesta" name ="answer3" value={data.answer3} onChange = {handleChange} />

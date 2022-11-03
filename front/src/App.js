@@ -1,8 +1,8 @@
-
 import { useState } from 'react';
-import Main from './Main.js'
-import Play from './Play.js'
-import NewQuestion from './NewQuestion.js'
+import axios from 'axios';
+import Main from './Main.js';
+import Play from './Play.js';
+import NewQuestion from './NewQuestion.js';
 import './App.css';
 
 
@@ -12,7 +12,15 @@ const App = () =>  {
   const [hiddenNewQuestion, setHiddenNewQuestion] = useState(true);
   const [hiddenPlay, setHiddenPlay] = useState(true);
   const [hiddenMenu, setHiddenMenu] = useState(false);
+  const [questionsArray, setQuestionsArray] = useState([]);
 
+const updateQuestions = () => {
+  axios.get('/api/questions')
+  .then(res => {
+    setQuestionsArray(res.data);
+    console.log(questionsArray);
+  })
+}
   const play = () => {
     setHiddenPlay(prev => !prev);
   };
@@ -25,14 +33,14 @@ const App = () =>  {
 
   const changeMenues = comp => {
     hideMenu();
-    if      (comp == 'play')        play();
+    if      (comp == 'play')        {play()}
     else if (comp == 'newQuestion') newQuestion();
   }
 
   return (
     <div className="App">
-      <Main changeMenues={changeMenues} hiddenMenu={hiddenMenu}/>
-      <Play changeMenues={changeMenues} hiddenPlay={hiddenPlay}/>
+      <Main changeMenues={changeMenues} hiddenMenu={hiddenMenu} updateQuestions={updateQuestions}/>
+      <Play changeMenues={changeMenues} hiddenPlay={hiddenPlay} questionsArray={questionsArray}/>
       <NewQuestion changeMenues={changeMenues} hiddenAddQuestion={hiddenNewQuestion}/>
     </div>
   );

@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import axios from 'axios';
-import './styles.css'
+import './styles.css';
 
 const NewQuestion = props => {
 
@@ -33,10 +33,10 @@ const NewQuestion = props => {
     ];
     data.answers[data.correctAnswer].correct = true;
 
-    // axios.post('/api/questions', data)
-    //    .then(res => {
-    //      console.log(res.data);
-    // });
+    axios.post('/api/questions', data)
+       .then(res => {
+         console.log(res.data);
+    });
 
     setData({
       title:'',

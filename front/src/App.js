@@ -15,10 +15,11 @@ const App = () =>  {
   const [questionsArray, setQuestionsArray] = useState([]);
 
 const updateQuestions = () => {
+  console.log('updating questions...');
   axios.get('/api/questions')
   .then(res => {
-    setQuestionsArray(res.data);
-    console.log(questionsArray);
+    setQuestionsArray(res.data.sort(() => Math.random() - 0.5));
+    // questionsArray.sort(() => Math.random() - 0.5);
   })
 }
   const play = () => {
@@ -33,7 +34,7 @@ const updateQuestions = () => {
 
   const changeMenues = comp => {
     hideMenu();
-    if      (comp == 'play')        {play()}
+    if      (comp == 'play')        play()
     else if (comp == 'newQuestion') newQuestion();
   }
 

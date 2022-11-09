@@ -14,7 +14,7 @@ const App = () =>  {
   const [hiddenMenu, setHiddenMenu] = useState(false);
   const [questionsArray, setQuestionsArray] = useState([]);
 
-const updateQuestions = () => {
+  const updateQuestions = () => {
   console.log('updating questions...');
   axios.get('/api/questions')
   .then(res => {
@@ -22,6 +22,7 @@ const updateQuestions = () => {
     // questionsArray.sort(() => Math.random() - 0.5);
   })
 }
+
   const play = () => {
     setHiddenPlay(prev => !prev);
   };

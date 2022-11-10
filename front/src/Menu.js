@@ -2,14 +2,14 @@ import react from 'react';
 
 const Menu = props => {
 
-  const {hiddenMenu, changeMenues, updateQuestions} = props;
+  const {variables, functions} = props;
 
 
   return (
-    <div hidden={hiddenMenu}>
+    <div hidden={variables.hiddenMenu}>
       <h1>Preguntados La35</h1>
-      <button type="button" onClick={e => {changeMenues('play'); updateQuestions()}}>Jugar</button>
-      <button type="button" onClick={e => changeMenues('newQuestion')}>Agreagar Pregunta</button>
+      <button type="button" onClick={e => {functions.changeMenues('play'); functions.updateQuestions()}}>Jugar</button>
+      <button type="button" onClick={e => functions.changeMenues('newQuestion')}>Agreagar Pregunta</button>
     </div>
   )
 };

@@ -4,7 +4,7 @@ import './styles.css';
 
 const NewQuestion = props => {
 
-  const {changeMenues, hiddenAddQuestion} = props;
+  const {variables, functions} = props;
 
   const [data, setData] = useState({
     title:'',
@@ -49,7 +49,7 @@ const NewQuestion = props => {
       correctAnswer: 1
     })
     alert('Pregunta enviada correctamente');
-    changeMenues('newQuestion');
+    functions.changeMenues('newQuestion');
   };
 
   const handleRadios = e => {
@@ -59,9 +59,9 @@ const NewQuestion = props => {
   };
 
   return (
-    <div hidden={(hiddenAddQuestion)}>
+    <div hidden={(variables.hiddenNewQuestion)}>
       <div>
-      <button type="button" className="goBack" onClick={e => changeMenues('newQuestion')} ><i className="fa-solid fa-xmark-large"></i></button>
+      <button type="button" onClick={e => functions.changeMenues('newQuestion')} ><i className="fa-solid fa-xmark-large"></i></button>
       </div>
       <h1>Agregar Pregunta</h1>
       <form onSubmit= {handleSubmit}>

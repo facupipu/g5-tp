@@ -2,16 +2,14 @@ import Question from './Question.js'
 import { useEffect, useState } from 'react'
 const Play = props => {
 
-  const { hiddenPlay, questionsArray, functions } = props;
-
-  functions.gameover = gameover;
+  const {variables, functions} = props;
 
   return (
-    <div hidden={hiddenPlay}>
+    <div hidden={variables.hiddenPlay}>
       <div>
         <button type="button" onClick={e => functions.changeMenues('play')}>volver</button>
       </div>
-      <Question questionsArray={questionsArray} functions={functions}/>
+      <Question variables={variables} functions={functions}/>
     </div>
   )
 };

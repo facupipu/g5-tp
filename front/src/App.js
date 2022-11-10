@@ -14,6 +14,7 @@ const App = () =>  {
   const [hiddenNewQuestion, setHiddenNewQuestion] = useState(true);
 
   const [questionsArray, setQuestionsArray] = useState([]);
+  const [score, setScore] = useState(0);
 
   const updateQuestions = () => {
   console.log('updating questions...');
@@ -23,6 +24,9 @@ const App = () =>  {
     // questionsArray.sort(() => Math.random() - 0.5);
   })
 }
+  const updateScore = value => {
+   setScore(value);
+  }
 
   const play = () => {
     setHiddenPlay(prev => !prev);
@@ -41,20 +45,34 @@ const App = () =>  {
     menu();
     if      (comp == 'play')        play()
     else if (comp == 'newQuestion') newQuestion();
+    else if (comp == 'gameover') gameover();
   }
 
   const functions = {
-    changeMenues,
+    updateQuestions,
+    updateScore,
     play,
-    menu
+    gameover,
+    newQuestion,
+    menu,
+    changeMenues
+  };
+
+  const variables = {
+    hiddenMenu,
+    hiddenPlay,
+    hiddenGameover,
+    hiddenNewQuestion,
+    questionsArray,
+    score,
   };
 
   return (
     <div className="App">
-      <Menu changeMenues={changeMenues} hiddenMenu={hiddenMenu} updateQuestions={updateQuestions}/>
-      <Play hiddenPlay={hiddenPlay} questionsArray={questionsArray} functions={functions}/>
-      <Gameover hiddenGameover={hiddenGameover}/>
-      <NewQuestion changeMenues={changeMenues} hiddenAddQuestion={hiddenNewQuestion}/>
+      <Menu functions={functions} variables={variables}/>
+      <Play functions={functions} variables={variables}/>
+      <Gameover functions={functions} variables={variables}/>
+      <NewQuestion functions={functions} variables={variables}/>
     </div>
   );
 }

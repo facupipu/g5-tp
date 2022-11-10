@@ -1,4 +1,6 @@
-const Main = props => {
+import react from 'react';
+
+const Menu = props => {
 
   const {hiddenMenu, changeMenues, updateQuestions} = props;
 
@@ -12,4 +14,4 @@ const Main = props => {
   )
 };
 
-export default Main;
+export default Menu;

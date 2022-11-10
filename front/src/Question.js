@@ -2,9 +2,14 @@ import { useState } from 'react';
 
 const Question = props => {
 
-  const { questionsArray, changeMenues } = props;
+  const { questionsArray, functions } = props;
   const [questionIndex, setQuestionIndex] = useState(0);
   const question = questionsArray[questionIndex];
+
+  const finished = () => {
+    functions.play();
+    functions.gameover();
+  };
 
   const handleAnswerSubmit = e => {
     const isCorrect = e.target.dataset.correct === 'true' ? true : false;
@@ -12,15 +17,14 @@ const Question = props => {
     e.target.style.background = (isCorrect ? "green" : "red");
     if (questionIndex == questionsArray.length - 1) {
       alert("Ganaste, me quede sin preguntas");
+      finished();
       window.location.reload();
     }
     if (isCorrect) {
       setQuestionIndex(questionIndex + 1);
     }
     else {
-
-      changeMenues('play');
-
+      finished();
     }
     e.target.style.background = "#e9e9ed";
   }

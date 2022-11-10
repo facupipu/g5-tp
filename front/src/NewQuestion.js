@@ -61,7 +61,7 @@ const NewQuestion = props => {
   return (
     <div hidden={(hiddenAddQuestion)}>
       <div>
-       <button type="button" className="bg-red" onClick={e => changeMenues('newQuestion')} />
+      <button type="button" className="goBack" onClick={e => changeMenues('newQuestion')} ><i class="fa-solid fa-xmark-large"></i></button>
       </div>
       <h1>Agregar Pregunta</h1>
       <form onSubmit= {handleSubmit}>
@@ -78,21 +78,21 @@ const NewQuestion = props => {
             <option value="geografia">Geografia</option>
           </select>
         </div>
-        <div>
-          <input required type="text" placeholder="1° Respuesta" name ="answer1" value={data.answer1} onChange = {handleChange} />
-          <input name="trueAnswer" type="radio" id ="true1" value="1" defaultChecked onChange={handleRadios}/>
+        <div className = "respuestas">
+          <input class = "iRespuestas" required type="text" placeholder="1° Respuesta" name ="answer1" value={data.answer1} onChange = {handleChange} />
+          <input className = "answerButton" name="trueAnswer" type="radio" id ="true1" value="1" defaultChecked onChange={handleRadios}/>
         </div>
-        <div>
-          <input required type="text" placeholder="2° Respuesta" name ="answer2" value={data.answer2} onChange = {handleChange} />
-          <input name="trueAnswer" type="radio" id ="true2" value="2" onChange={handleRadios}/>
+        <div className = "respuestas">
+          <input class = "iRespuestas" required type="text" placeholder="2° Respuesta" name ="answer2" value={data.answer2} onChange = {handleChange} />
+          <input className = "answerButton" name="trueAnswer" type="radio" id ="true2" value="2" onChange={handleRadios}/>
         </div>
-        <div>
-          <input required type="text" placeholder="3° Respuesta" name ="answer3" value={data.answer3} onChange = {handleChange} />
-          <input name="trueAnswer" type="radio" id ="true3" value="3" onChange={handleRadios}/>
+        <div className = "respuestas">
+          <input class = "iRespuestas" required type="text" placeholder="3° Respuesta" name ="answer3" value={data.answer3} onChange = {handleChange} />
+          <input className = "answerButton" name="trueAnswer" type="radio" id ="true3" value="3" onChange={handleRadios}/>
         </div>
-        <div>
-          <input required type="text" placeholder="4° Respuesta" name ="answer4" value={data.answer4} onChange = {handleChange} />
-          <input name="trueAnswer" type="radio" id ="true4" value="4" onChange={handleRadios}/>
+        <div className = "respuestas">
+          <input class = "iRespuestas" required type="text" placeholder="4° Respuesta" name ="answer4" value={data.answer4} onChange = {handleChange} />
+          <input className = "answerButton" name="trueAnswer" type="radio" id ="true4" value="4" onChange={handleRadios}/>
         </div>
         <button type="submit">PUBLICAR</button>
       </form>

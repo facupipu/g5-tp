@@ -1,5 +1,7 @@
-import Question from './Question.js'
-import { useEffect, useState } from 'react'
+import Question from './Question.js';
+import { useEffect, useState } from 'react';
+import './styles.css';
+
 const Play = props => {
 
   const {variables, functions} = props;
@@ -7,7 +9,7 @@ const Play = props => {
   return (
     <div hidden={variables.hiddenPlay}>
       <div>
-        <button type="button" onClick={e => functions.changeMenues('play')}>volver</button>
+        <button className="goBack" type="button" onClick={e => functions.changeMenues('play')}>volver</button>
       </div>
       <Question variables={variables} functions={functions}/>
     </div>

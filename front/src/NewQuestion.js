@@ -60,13 +60,13 @@ const NewQuestion = props => {
 
   return (
     <div hidden={(variables.hiddenNewQuestion)}>
-      <div>
-      <button type="button" onClick={e => functions.changeMenues('newQuestion')} ><i className="fa-solid fa-xmark-large"></i></button>
+      <div className="h1yboton">
+      <button className= "goBack" type="button" onClick={e => functions.changeMenues('newQuestion')} ><i className="fa-solid fa-xmark-large"></i></button>
       </div>
       <h1>Agregar Pregunta</h1>
       <form onSubmit= {handleSubmit}>
         <div>
-          <input required type="text" placeholder="Pregunta" name="title" value={data.title} onChange = {handleChange} />
+          <input className="agregarPregunta" required type="text" placeholder="Pregunta" name="title" value={data.title} onChange = {handleChange} />
         </div>
         <div>
           <select required placeholder="Materia" name="subject" id="subject" value={data.subject} onChange = {handleChange} >
@@ -94,7 +94,7 @@ const NewQuestion = props => {
           <input className = "iRespuestas" required type="text" placeholder="4° Respuesta" name ="answer4" value={data.answer4} onChange = {handleChange} />
           <input className = "answerButton" name="trueAnswer" type="radio" id ="true4" value="4" onChange={handleRadios}/>
         </div>
-        <button type="submit">PUBLICAR</button>
+        <button className="publicarButton" type="submit">PUBLICAR</button>
       </form>
     </div>
   )

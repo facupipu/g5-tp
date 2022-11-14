@@ -1,17 +1,60 @@
 .goBack {
   background: transparent;
-  border: 0;
+  border: none;
+  font-size: 50px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  margin-top: 1%;
+  margin-left: 47%;
+  color: #8dabc5;
+}
+
+h1 {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.h1yboton {
+  margin-left: 35%;
+  margin-bottom: 2%;
+  display: flex;
 }
 
 input {
   text-align: center;
-  height: 75px;
+  height: 65px;
   width: 300px;
-  font-size: 35pt;
+  font-size: 25pt;
+  border-radius: 25px;
+  outline: none;
+  border: 0;
 }
 
 input::placeholder {
   text-align: center;
+  font-size: 35pt;
+}
+
+.agregarPregunta {
+  width: 600px;
+}
+
+#subject {
+  margin-top: 2%;
+  text-align: center;
+  height: 55px;
+  width: 310px;
+  font-size: 25pt;
+  border-radius: 25px;
+  outline: none;
+  border: 0;
+}
+
+#subject:hover{
+  background-color: #B2C6D8;
+  -webkit-appearance: none;
+  -moz-appearance: none;
 }
 
 .respuestas {
@@ -19,16 +62,34 @@ input::placeholder {
   margin: 2%;
   margin-left: 25%;
   margin-right: 25%;
-  padding-top: 10px;
-  padding-bottom: 30px;
-  width: ;
+  border-radius: 25px;
 }
 
 .iRespuestas {
   background: transparent;
   border: 0;
+  margin-right: 20%;
 }
 
 .answerButton {
+  width: 40px;
   height: 40px;
+  margin-left: 100px;
+  cursor: pointer;
+  font-size: 22px;
+}
+
+.publicarButton {
+  text-align: center;
+  height: 55px;
+  width: 300px;
+  font-size: 25pt;
+  border-radius: 25px;
+  outline: none;
+  border: 0;
+  cursor: pointer;
+}
+
+.publicarButton:hover{
+  background-color: #B2C6D8;
 }

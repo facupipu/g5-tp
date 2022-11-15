@@ -7,7 +7,17 @@
   cursor: pointer;
   margin-top: 1%;
   margin-left: 47%;
-  color: #8dabc5;
+  color: #267de0;
+  transition: all .5s ease-out;
+}
+
+.goBack:hover {
+  color: #941212;
+  transition: all .5s ease-out;
+}
+
+.playGoBack {
+  margin-left: 90%;
 }
 
 h1 {
@@ -16,8 +26,8 @@ h1 {
 }
 
 .h1yboton {
-  margin-left: 35%;
-  margin-bottom: 2%;
+  margin-left: 38%;
+  margin-bottom: 1%;
   display: flex;
 }
 
@@ -38,23 +48,32 @@ input::placeholder {
 
 .agregarPregunta {
   width: 600px;
+  height: 48px;
 }
 
 #subject {
+  background-color: #941212;
+  color: white;
   margin-top: 2%;
   text-align: center;
-  height: 55px;
-  width: 310px;
   font-size: 25pt;
   border-radius: 25px;
   outline: none;
   border: 0;
+  width: 25vw;
+  height: 10vh;
+  transition: all .5s ease-out;
 }
 
 #subject:hover{
-  background-color: #B2C6D8;
+  background-color: white;
+  border: #267de0 solid 5px;
+  color: #267de0;
   -webkit-appearance: none;
   -moz-appearance: none;
+  width: 30vw;
+  height: 12vh;
+  transition: all .5s ease-out;
 }
 
 .respuestas {
@@ -69,11 +88,13 @@ input::placeholder {
   background: transparent;
   border: 0;
   margin-right: 20%;
+  height: 50px;
 }
 
 .answerButton {
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
+  margin-top: 3%;
   margin-left: 100px;
   cursor: pointer;
   font-size: 22px;
@@ -81,15 +102,30 @@ input::placeholder {
 
 .publicarButton {
   text-align: center;
-  height: 55px;
-  width: 300px;
-  font-size: 25pt;
   border-radius: 25px;
   outline: none;
   border: 0;
   cursor: pointer;
+  background-color: #267de0;
+  color: white;
+  width: 12vw;
+  height: 10vh;
+  font-family: 'Montserrat', sans-serif;
+  border: none;
+  padding: 15px 32px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 22px;
+  font-weight: 300;
+  transition: all .5s ease-out;
 }
 
 .publicarButton:hover{
-  background-color: #B2C6D8;
+  background-color: white;
+  border: #941212 solid 5px;
+  color: #941212;
+  width: 20vw;
+  height: 11vh;
+  font-weight: 700;
+  transition: all .5s ease-out;
 }

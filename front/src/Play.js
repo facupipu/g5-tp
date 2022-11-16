@@ -9,7 +9,7 @@ const Play = props => {
   return (
     <div hidden={variables.hiddenPlay}>
       <div className="playGoBack">
-        <button type="button" className="goBack" onClick={e => functions.changeMenues('play')}><i class="fa fa-close"></i></button>
+        <button type="button" className="goBack" onClick={e => functions.changeMenues('play')}><i className="fa fa-close"></i></button>
       </div>
       <Question variables={variables} functions={functions}/>
     </div>

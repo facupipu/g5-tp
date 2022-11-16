@@ -1,0 +1,21 @@
+{
+  "name": "g5-tp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "server" : "npm start --prefix back",
+    "start" : "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/facupipu/g5-tp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/facupipu/g5-tp/issues"
+  },
+  "homepage": "https://github.com/facupipu/g5-tp#readme"
+}

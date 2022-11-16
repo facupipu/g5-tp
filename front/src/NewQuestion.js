@@ -62,7 +62,7 @@ const NewQuestion = props => {
     <div hidden={(variables.hiddenNewQuestion)}>
       <div className="h1yboton">
       <h1>Agregar Pregunta</h1>
-      <button type="button" className= "goBack" onClick={e => functions.changeMenues('newQuestion')} ><i class="fa fa-close"></i></button>
+      <button type="button" className= "goBack" onClick={e => functions.changeMenues('newQuestion')} ><i className="fa fa-close"></i></button>
       </div>
       <form onSubmit= {handleSubmit}>
         <div>

@@ -18,8 +18,8 @@ const Question = props => {
     if (isCorrect) {
       if (questionIndex == variables.questionsArray.length - 1) {
         alert("Ganaste, me quede sin preguntas");
+        functions.updateScore(questionIndex)
         finished();
-        window.location.reload();
       }
       setQuestionIndex(questionIndex + 1);
       functions.updateScore(variables.score + 1);

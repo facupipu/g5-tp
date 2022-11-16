@@ -3,6 +3,7 @@ const Gameover = props => {
   const {variables, functions} = props;
 
   const newGame = () => {
+    if(variables.score == variables.questionsArray.length) window.location.reload();
     functions.play();
     functions.gameover();
     functions.updateQuestions();
@@ -10,6 +11,7 @@ const Gameover = props => {
   }
 
   const backToMenu = () => {
+    if(variables.score == variables.questionsArray.length) window.location.reload();
     functions.changeMenues('gameover');
     functions.updateScore(0);
   }

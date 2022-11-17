@@ -3,8 +3,7 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 
 const PORT = process.env.PORT || 4000;
-const DB = process.env.DB || 'mongodb+srv://1234:5678@trivia.w6kyffe.mongodb.net/?retryWrites=true&w=majority';
-
+const DB = process.env.DB || 'mongodb://127.0.0.1/trivia';
 const app = express();
 
 mongoose.connect(DB)

@@ -42,7 +42,7 @@ const Question = props => {
       <h3>{question.subject}</h3>
       <div>
         {question.answers.map((currentAnswer, idx) => (
-          <button key={idx} onClick={handleAnswerSubmit} data-correct={currentAnswer.correct}>  {currentAnswer.answer} </button>
+          <button className="optionButton" key={idx} onClick={handleAnswerSubmit} data-correct={currentAnswer.correct}>  {currentAnswer.answer} </button>
         ))}
       </div>
       </div>)}
